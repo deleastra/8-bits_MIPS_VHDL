@@ -36,12 +36,12 @@ BEGIN
 	
 	-- $zero handle
 	WITH read_reg_1 SELECT
-		read_data_1 <= "00000000" 											WHEN "00",
+		read_data_1 <= "00000000" WHEN "00",
 							reg_mem(TO_INTEGER(UNSIGNED(read_reg_1))) WHEN OTHERS;
 	
 	WITH read_reg_2 SELECT
-		read_data_2 <= "00000000" 											WHEN "00",
-							reg_mem(TO_INTEGER(UNSIGNED(read_reg_1))) WHEN OTHERS;
+		read_data_2 <= "00000000" WHEN "00",
+							reg_mem(TO_INTEGER(UNSIGNED(read_reg_2))) WHEN OTHERS;
 
 END behavior;
 				
